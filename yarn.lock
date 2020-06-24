@@ -1212,6 +1212,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^14.0.13":
+  version: 14.0.13
+  resolution: "@types/node@npm:14.0.13"
+  checksum: 2f2be6f7f1a916b0f4d58949bd934a8e41c0dcb15c493c17c3eaf78da3065c09650030f0dfe2e8c11880d597ee001d7cd925129218037fdb4432e80f7d895673
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.0
   resolution: "@types/normalize-package-data@npm:2.4.0"
@@ -5069,6 +5076,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regexparam@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "regexparam@npm:1.3.0"
+  checksum: 3be8055bc697d720647e2b2a781e8a784013e80d51724dce833524c8f1a9fbfa7efd3dac90572ce64191b82e908c8e70c6ff40b8da3ff0b3fb4199af73d4a8b5
+  languageName: node
+  linkType: hard
+
 "remove-trailing-separator@npm:^1.0.1":
   version: 1.1.0
   resolution: "remove-trailing-separator@npm:1.1.0"
@@ -5306,9 +5320,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.17.1":
-  version: 2.17.1
-  resolution: "rollup@npm:2.17.1"
+"rollup@npm:^2.18.0":
+  version: 2.18.0
+  resolution: "rollup@npm:2.18.0"
   dependencies:
     fsevents: ~2.1.2
   dependenciesMeta:
@@ -5316,7 +5330,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: e43f9387e9297c7f00c6867e8d9547bf53a01642874745f7a2ddd61ca1a721b9ae5e94eae7b6da874dcae899c4f4dfd0fd45e5695d92a0e0d6d873262ccd3bb9
+  checksum: 6841c56239b26a665362c7db9c6a7f3e2b9628f800755ef7f927f6f65f6df13ff7bcc0fc7af4efca6c35a4eb5e67a6c31616d54b55f0e60c8b9a7a1ef9a47a8b
   languageName: node
   linkType: hard
 
@@ -5436,11 +5450,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "server@workspace:packages/server"
   dependencies:
-    "@types/jest": ^26.0.0
-    jest: ^26.0.1
+    "@types/node": ^14.0.13
     prettier: ^2.0.5
-    ts-jest: ^26.1.0
+    regexparam: ^1.3.0
     typescript: ^3.9.5
+    uWebSockets.js: "uNetworking/uWebSockets.js#binaries"
+    util: "link:./util.ts"
+  bin:
+    server: ./dist/cli/main.js
   languageName: unknown
   linkType: soft
 
@@ -6059,9 +6076,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:^26.1.0":
-  version: 26.1.0
-  resolution: "ts-jest@npm:26.1.0"
+"ts-jest@npm:^26.1.1":
+  version: 26.1.1
+  resolution: "ts-jest@npm:26.1.1"
   dependencies:
     bs-logger: 0.x
     buffer-from: 1.x
@@ -6078,7 +6095,7 @@ __metadata:
     typescript: ">=3.8 <4.0"
   bin:
     ts-jest: cli.js
-  checksum: 4289da86b257a0cd1afcc6412e6f6d6e25388cb620c5f56cf0deb909dacb3c7f598ca07c4dbd52cccb2d94408419a732b50ceffcb46d041b311b8d5d41668f24
+  checksum: e972f77c2a4fbf1ef0efd06b393d19de23cc279a13655da06e5e1320423bde903759d687f266df9cbc24c322728aca1ba745b68a0528d5a8e821e6168acb3a9b
   languageName: node
   linkType: hard
 
@@ -6171,6 +6188,13 @@ typescript@^3.9.5:
   languageName: node
   linkType: hard
 
+"uWebSockets.js@uNetworking/uWebSockets.js#binaries":
+  version: 18.2.0
+  resolution: "uWebSockets.js@https://github.com/uNetworking/uWebSockets.js.git#commit=85e7e26532c96960f2ee1350649a3711a4231bd0"
+  checksum: 9915d48d037427da3e5e8335a85f0783fbc9836640e78ad26f6b50272b1dab20c221f2c59ebec7feefcc03b0242baf17a534d52de7763f7c294417a7a25c959d
+  languageName: node
+  linkType: hard
+
 "union-value@npm:^1.0.0":
   version: 1.0.1
   resolution: "union-value@npm:1.0.1"
@@ -6232,6 +6256,12 @@ typescript@^3.9.5:
   checksum: 73c2b1cf0210ccac300645384d8443cabbd93194117b2dc1b3bae8d8279ad39aedac857e020c4ea505e96a1045059c7359db3df6a9df0be6b8584166c9d61dc9
   languageName: node
   linkType: hard
+
+"util@link:./util.ts::locator=server%40workspace%3Apackages%2Fserver":
+  version: 0.0.0-use.local
+  resolution: "util@link:./util.ts::locator=server%40workspace%3Apackages%2Fserver"
+  languageName: node
+  linkType: soft
 
 "uuid@npm:^3.3.2":
   version: 3.4.0
@@ -6327,7 +6357,7 @@ typescript@^3.9.5:
     pixi.js: ^5.3.0
     prettier: ^2.0.5
     prettier-plugin-svelte: ^1.1.0
-    rollup: ^2.17.1
+    rollup: ^2.18.0
     rollup-plugin-livereload: ^1.3.0
     rollup-plugin-serve: ^1.0.1
     rollup-plugin-svelte: ^5.2.3
@@ -6336,7 +6366,7 @@ typescript@^3.9.5:
     svelte: ^3.23.2
     svelte-jester: ^1.0.6
     svelte-preprocess: ^3.9.9
-    ts-jest: ^26.1.0
+    ts-jest: ^26.1.1
     tslib: ^2.0.0
     typescript: ^3.9.5
   languageName: unknown
